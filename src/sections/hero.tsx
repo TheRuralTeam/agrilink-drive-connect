@@ -2,7 +2,7 @@ import heroTruck from "@/assets/hero-truck.jpg";
 
 export function HeroSection() {
   return (
-    <section id="top" className="relative bg-ink text-ink-foreground">
+    <section id="top" className="relative bg-carbon text-ink-foreground">
       <div className="absolute inset-0">
         <img
           src={heroTruck}
@@ -11,7 +11,7 @@ export function HeroSection() {
           height={1008}
           className="h-full w-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-carbon via-carbon/85 to-carbon/30" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-40">
