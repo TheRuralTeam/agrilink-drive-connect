@@ -1,5 +1,4 @@
 import heroTruck from "@/assets/hero-truck.jpg";
-import { Stat } from "@/components/ui-bits";
 
 export function HeroSection() {
   return (
@@ -73,6 +72,3 @@ export function HeroSection() {
     </section>
   );
 }
-
-/* Stat fica disponível para reutilização nas secções claras. */
-export { Stat };
