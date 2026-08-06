@@ -20,12 +20,12 @@ export function ProtocoloSection() {
         </Reveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          {[
+          {([
             ["01", "Identidade", "Verificação do motorista", "Apresenta documento de identificação e matrícula do veículo ao agente de campo. Só o motorista atribuído pode levantar a carga."],
             ["02", "Conferência", "Checklist com o agente", "Contagem de caixas, sacos ou grades e verificação do estado do produto. Divergências são registadas antes de fechar a caixa de carga."],
             ["03", "Registo", "Confirmação fotográfica", "Fotografias da carga carregada e do veículo fechado ficam anexadas à viagem — é a tua prova em caso de reclamação."],
             ["04", "Acondicionamento", "Segurança da carga", "Produto fresco devidamente empilhado, coberto e amarrado. A perda por mau acondicionamento é responsabilidade do transportador."],
-          ].map(([n, cat, titulo, texto], i) => (
+          ] as const).map(([n, cat, titulo, texto], i) => (
             <Reveal key={n} delay={i * 80} className="h-full">
               <NumberedCard number={n} category={cat} title={titulo}>
                 {texto}
