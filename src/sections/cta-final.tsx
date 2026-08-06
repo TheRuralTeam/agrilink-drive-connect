@@ -1,47 +1,23 @@
+import { CtaButtons, Reveal } from "@/components/ui-bits";
+
 export function CtaFinalSection() {
   return (
-    <section id="registo" className="bg-ink text-ink-foreground">
-      <div className="mx-auto max-w-7xl px-6 py-28 md:py-36">
-        <span className="eyebrow">Próximo Passo</span>
-        <div className="mt-6 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-          <h2 className="max-w-2xl text-4xl leading-[1.08] md:text-6xl">
-            Junta-te à rede de <em className="text-lime">transportadores</em>{" "}
-            AgriLink
-          </h2>
-          <form
-            className="w-full max-w-md space-y-4"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="text"
-              required
-              placeholder="Nome completo"
-              className="w-full border border-ink-foreground/25 bg-transparent px-4 py-3 text-sm placeholder:text-ink-foreground/40 focus:border-lime focus:outline-none"
-            />
-            <input
-              type="tel"
-              required
-              placeholder="Telefone / WhatsApp"
-              className="w-full border border-ink-foreground/25 bg-transparent px-4 py-3 text-sm placeholder:text-ink-foreground/40 focus:border-lime focus:outline-none"
-            />
-            <input
-              type="text"
-              placeholder="Província de base"
-              className="w-full border border-ink-foreground/25 bg-transparent px-4 py-3 text-sm placeholder:text-ink-foreground/40 focus:border-lime focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="inline-flex w-full items-center justify-between gap-3 bg-background px-6 py-3.5 text-sm font-medium text-foreground transition-opacity hover:opacity-90"
-            >
-              Registar como Motorista
-              <span aria-hidden>→</span>
-            </button>
-            <p className="text-xs text-ink-foreground/45">
-              A equipa AgriLink Logística entra em contacto para validação de
-              documentos.
+    <section id="registo" className="bg-background">
+      <div className="mx-auto max-w-[1280px] px-6 py-20 md:py-28 lg:px-10">
+        <Reveal>
+          <div className="rounded-2xl border border-accent/40 bg-accent-soft px-8 py-14 text-center md:px-16">
+            <span className="badge">Próximo Passo</span>
+            <h2 className="mx-auto mt-6 max-w-3xl text-4xl md:text-5xl">
+              Junta-te à rede de transportadores do{" "}
+              <span className="text-primary">Carrega</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground">
+              Cria a tua conta, envia os documentos do veículo e começa a
+              receber cargas atribuídas com valor definido.
             </p>
-          </form>
-        </div>
+            <CtaButtons className="mt-8 justify-center" />
+          </div>
+        </Reveal>
       </div>
     </section>
   );
