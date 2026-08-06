@@ -3,18 +3,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { HeroSection } from "@/sections/hero";
+import { MetricasSection } from "@/sections/metricas";
 import { ComoFuncionaSection } from "@/sections/como-funciona";
 import { ProtocoloSection } from "@/sections/protocolo";
 import { PagamentoSection } from "@/sections/pagamento";
-import { CitacaoSection } from "@/sections/citacao";
 import { ViagemSection } from "@/sections/viagem";
 import { CorredoresSection } from "@/sections/corredores";
 import { FaqSection } from "@/sections/faq";
 import { CtaFinalSection } from "@/sections/cta-final";
 
-const TITLE = "AgriLink Logística | Rede de Motoristas e Transportadores";
+const TITLE = "Carrega | Transporte de Carga Agroalimentar — AgriLink";
 const DESCRIPTION =
-  "Transporta carga agrícola verificada em Angola com a AgriLink: cargas atribuídas, carregamento supervisionado, pagamento em duas fases e apoio durante toda a viagem.";
+  "Carrega é o serviço de logística da AgriLink: cargas agroalimentares atribuídas a motoristas em Angola, carregamento supervisionado, 50% pago no início e 50% na entrega.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,6 +23,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: DESCRIPTION },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -34,10 +36,10 @@ function Index() {
       <SiteHeader />
       <main>
         <HeroSection />
+        <MetricasSection />
         <ComoFuncionaSection />
         <ProtocoloSection />
         <PagamentoSection />
-        <CitacaoSection />
         <ViagemSection />
         <CorredoresSection />
         <FaqSection />
