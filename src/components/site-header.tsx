@@ -7,6 +7,7 @@ const NAV = [
   { label: "Como Funciona", href: "#como-funciona" },
   { label: "Protocolo", href: "#protocolo" },
   { label: "Pagamento", href: "#pagamento" },
+  { label: "Preços", href: "#precos" },
   { label: "Corredores", href: "#corredores" },
   { label: "FAQ", href: "#faq" },
 ];
