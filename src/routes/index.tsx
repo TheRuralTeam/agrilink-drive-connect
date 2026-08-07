@@ -7,6 +7,7 @@ import { MetricasSection } from "@/sections/metricas";
 import { ComoFuncionaSection } from "@/sections/como-funciona";
 import { ProtocoloSection } from "@/sections/protocolo";
 import { PagamentoSection } from "@/sections/pagamento";
+import { PrecosSection } from "@/sections/precos";
 import { ViagemSection } from "@/sections/viagem";
 import { CorredoresSection } from "@/sections/corredores";
 import { FaqSection } from "@/sections/faq";
@@ -40,6 +41,7 @@ function Index() {
         <ComoFuncionaSection />
         <ProtocoloSection />
         <PagamentoSection />
+        <PrecosSection />
         <ViagemSection />
         <CorredoresSection />
         <FaqSection />
