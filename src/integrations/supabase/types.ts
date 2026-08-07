@@ -14,7 +14,137 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      cargas: {
+        Row: {
+          created_at: string
+          data_carga: string
+          destino: string
+          distancia_km: number | null
+          estado: Database["public"]["Enums"]["carga_estado"]
+          id: string
+          motorista_id: string | null
+          observacoes: string | null
+          origem: string
+          produto: string
+          quantidade_kg: number
+          updated_at: string
+          valor_kz: number
+        }
+        Insert: {
+          created_at?: string
+          data_carga: string
+          destino: string
+          distancia_km?: number | null
+          estado?: Database["public"]["Enums"]["carga_estado"]
+          id?: string
+          motorista_id?: string | null
+          observacoes?: string | null
+          origem: string
+          produto: string
+          quantidade_kg: number
+          updated_at?: string
+          valor_kz: number
+        }
+        Update: {
+          created_at?: string
+          data_carga?: string
+          destino?: string
+          distancia_km?: number | null
+          estado?: Database["public"]["Enums"]["carga_estado"]
+          id?: string
+          motorista_id?: string | null
+          observacoes?: string | null
+          origem?: string
+          produto?: string
+          quantidade_kg?: number
+          updated_at?: string
+          valor_kz?: number
+        }
+        Relationships: []
+      }
+      localizacoes_viagem: {
+        Row: {
+          carga_id: string
+          id: string
+          latitude: number
+          longitude: number
+          motorista_id: string
+          registado_em: string
+        }
+        Insert: {
+          carga_id: string
+          id?: string
+          latitude: number
+          longitude: number
+          motorista_id: string
+          registado_em?: string
+        }
+        Update: {
+          carga_id?: string
+          id?: string
+          latitude?: number
+          longitude?: number
+          motorista_id?: string
+          registado_em?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "localizacoes_viagem_carga_id_fkey"
+            columns: ["carga_id"]
+            isOneToOne: false
+            referencedRelation: "cargas"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      motorista_details: {
+        Row: {
+          base_provincia: string | null
+          bi_numero: string | null
+          capacidade_kg: number | null
+          carta_conducao: string | null
+          created_at: string
+          matricula: string | null
+          nome_completo: string
+          telefone: string
+          tier: Database["public"]["Enums"]["motorista_tier"]
+          tipo_veiculo: string | null
+          updated_at: string
+          user_id: string
+          verificado: boolean
+        }
+        Insert: {
+          base_provincia?: string | null
+          bi_numero?: string | null
+          capacidade_kg?: number | null
+          carta_conducao?: string | null
+          created_at?: string
+          matricula?: string | null
+          nome_completo: string
+          telefone: string
+          tier?: Database["public"]["Enums"]["motorista_tier"]
+          tipo_veiculo?: string | null
+          updated_at?: string
+          user_id: string
+          verificado?: boolean
+        }
+        Update: {
+          base_provincia?: string | null
+          bi_numero?: string | null
+          capacidade_kg?: number | null
+          carta_conducao?: string | null
+          created_at?: string
+          matricula?: string | null
+          nome_completo?: string
+          telefone?: string
+          tier?: Database["public"]["Enums"]["motorista_tier"]
+          tipo_veiculo?: string | null
+          updated_at?: string
+          user_id?: string
+          verificado?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +153,15 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      carga_estado:
+        | "disponivel"
+        | "atribuida"
+        | "carregada"
+        | "em_transito"
+        | "entregue"
+        | "confirmada"
+        | "cancelada"
+      motorista_tier: "inicial" | "intermedio" | "avancado"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +288,17 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      carga_estado: [
+        "disponivel",
+        "atribuida",
+        "carregada",
+        "em_transito",
+        "entregue",
+        "confirmada",
+        "cancelada",
+      ],
+      motorista_tier: ["inicial", "intermedio", "avancado"],
+    },
   },
 } as const
