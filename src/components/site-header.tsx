@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 import logo from "@/assets/agrilink-logo.asset.json";
 import { PLATFORM_URL } from "@/lib/site";
@@ -36,12 +37,9 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2">
-          <a
-            href={PLATFORM_URL}
-            className="btn-outline hidden !px-4 !py-2 text-sm sm:inline-flex"
-          >
+          <Link to="/auth" className="btn-outline hidden !px-4 !py-2 text-sm sm:inline-flex">
             Entrar na Plataforma
-          </a>
+          </Link>
           <a href={PLATFORM_URL} className="btn-primary !px-4 !py-2 text-sm">
             Registar
           </a>
