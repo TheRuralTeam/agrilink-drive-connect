@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { HeroSection } from "@/sections/hero";
 import { MetricasSection } from "@/sections/metricas";
 import { ComoFuncionaSection } from "@/sections/como-funciona";
+import { CargasPublicasSection } from "@/sections/cargas-publicas";
 import { ProtocoloSection } from "@/sections/protocolo";
 import { PagamentoSection } from "@/sections/pagamento";
 import { PrecosSection } from "@/sections/precos";
@@ -39,6 +40,7 @@ function Index() {
         <HeroSection />
         <MetricasSection />
         <ComoFuncionaSection />
+        <CargasPublicasSection />
         <ProtocoloSection />
         <PagamentoSection />
         <PrecosSection />
